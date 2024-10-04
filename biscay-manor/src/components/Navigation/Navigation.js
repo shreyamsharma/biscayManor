@@ -6,6 +6,7 @@ import logo from '../assets/biscay-manor.png';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubNav, setActiveSubNav] = useState(null);
+  const [language, setLanguage] = useState('en'); // 'en' for English, 'fr' for French
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,11 +19,16 @@ const Navigation = () => {
     }
   };
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'fr' : 'en');
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.topNav}>
-        <Link to="/contact" className={styles.topNavLink}>Contact</Link>
-        <Link to="/careers" className={styles.topNavLink}>Careers</Link>
+        <button onClick={toggleLanguage} className={styles.langButton}>
+          {language === 'en' ? 'Français' : 'English'}
+        </button>
       </div>
       <div className={styles.navbarContainer}>
         <Link to="/" className={styles.navbarLogo}>
@@ -41,12 +47,13 @@ const Navigation = () => {
             <Link to="/" className={styles.navLink} onClick={toggleMenu}>Home</Link>
           </li>
           <li className={styles.navItem}>
-            <Link to="/about" className={styles.navLink} onClick={() => toggleSubNav(0)}>
-              About
+            <Link to="/amenities" className={styles.navLink} onClick={() => toggleSubNav(0)}>
+              Amenities
             </Link>
             <ul className={`${styles.subNav} ${activeSubNav === 0 ? styles.active : ''}`}>
-              <li><Link to="/about/history" className={styles.subNavItem} onClick={toggleMenu}>Our History</Link></li>
-              <li><Link to="/about/team" className={styles.subNavItem} onClick={toggleMenu}>Our Team</Link></li>
+              <li><Link to="/amenities/dining" className={styles.subNavItem} onClick={toggleMenu}>Dining</Link></li>
+              <li><Link to="/amenities/fitness" className={styles.subNavItem} onClick={toggleMenu}>Fitness Center</Link></li>
+              <li><Link to="/amenities/spa" className={styles.subNavItem} onClick={toggleMenu}>Spa</Link></li>
             </ul>
           </li>
           <li className={styles.navItem}>
@@ -54,15 +61,13 @@ const Navigation = () => {
               Services
             </Link>
             <ul className={`${styles.subNav} ${activeSubNav === 1 ? styles.active : ''}`}>
-              <li><Link to="/services/service1" className={styles.subNavItem} onClick={toggleMenu}>Service 1</Link></li>
-              <li><Link to="/services/service2" className={styles.subNavItem} onClick={toggleMenu}>Service 2</Link></li>
+              <li><Link to="/services/concierge" className={styles.subNavItem} onClick={toggleMenu}>Concierge</Link></li>
+              <li><Link to="/services/events" className={styles.subNavItem} onClick={toggleMenu}>Event Planning</Link></li>
+              <li><Link to="/services/transportation" className={styles.subNavItem} onClick={toggleMenu}>Transportation</Link></li>
             </ul>
           </li>
           <li className={styles.navItem}>
-            <Link to="/locations" className={styles.navLink} onClick={toggleMenu}>Locations</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link to="/news" className={styles.navLink} onClick={toggleMenu}>News</Link>
+            <Link to="/contact" className={styles.navLink} onClick={toggleMenu}>Contact Us</Link>
           </li>
         </ul>
       </div>
