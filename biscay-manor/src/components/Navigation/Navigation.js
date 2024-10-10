@@ -6,6 +6,7 @@ import logo from '../assets/biscay-manor.png';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSubNav, setActiveSubNav] = useState(null);
+  const [language, setLanguage] = useState('en'); // 'en' for English, 'fr' for French
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -18,8 +19,17 @@ const Navigation = () => {
     }
   };
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'fr' : 'en');
+  };
+
   return (
     <nav className={styles.navbar}>
+      <div className={styles.topNav}>
+        <button onClick={toggleLanguage} className={styles.langButton}>
+          {language === 'en' ? 'Français' : 'English'}
+        </button>
+      </div>
       <div className={styles.navbarContainer}>
         <Link to="/" className={styles.navbarLogo}>
           <img src={logo} alt="Logo" />
