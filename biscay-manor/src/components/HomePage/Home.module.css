@@ -89,3 +89,28 @@
       padding: 2rem 1rem;
     }
   }
+
+  .reviews {
+    background-color: #f8f8f8;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .reviewSlideshow {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .reviewText {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .reviewAuthor {
+    font-weight: bold;
+  }
