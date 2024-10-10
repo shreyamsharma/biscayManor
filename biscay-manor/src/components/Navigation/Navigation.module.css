@@ -9,21 +9,6 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
   
-  .topNav {
-    align-items: flex-end;
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px;
-    background-color: #f8f8f8;
-  }
-  
-  .topNavLink {
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-    margin-left: 20px;
-  }
-  
   .navbarContainer {
     padding: 1rem 0;
     display: flex;
@@ -101,13 +86,6 @@
   }
   
   @media screen and (max-width: 960px) {
-    .navbarContainer {
-      padding: 20px;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
     .navbarLogo {
       margin-bottom: 0;
     }

@@ -26,6 +26,18 @@ const Footer = () => (
           <a href="https://instagram.com" className={styles.socialIcon} aria-label="Instagram">IG</a>
         </div>
       </div>
+      <div className={styles.footerSection}>
+        <h3>Our Location</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.3625505372793!2d-123.72479002320298!3d48.79405877132352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548f4f3fb5984839%3A0xee613513ba827cea!2sBiscay%20Manor!5e0!3m2!1sen!2sca!4v1728604157880!5m2!1sen!2sca" width="600" height="450" style="border:0;"
+          width="110%"
+          height="200"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </div>
     <div className={styles.footerBottom}>
       <p>&copy; 2024 Sunshine Assisted Living. All rights reserved.</p>
